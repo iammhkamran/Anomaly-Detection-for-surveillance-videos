@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.App {
+  display: flex;
+}
+
+.sidebar {
+  width: 25vw;
+  background-color: #379683;
+  color: white;
+  height: 100vh;
+  padding: 50px 12px;
+}
+
+.sidebar--heading {
+  margin-bottom: 50px;
+  line-height: 45px;
+}
+
+.sidebar--links--container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.sidebar--links {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.sidebar--links:active {
+  color: #5D5c61;
+}
+
+.sidebar--links:hover {
+  opacity: 70%;
+}
+
+.recorded-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 75vw;
+  padding-top: 40px;
+  background-color: #7395ae5e;
+  gap: 25px;
+  overflow: auto;
+}
+
+.recorded-video-form, .classify-btn {
+  flex: 1;  /* Allows both the form and button to take equal space */
+  margin-right: 20px;
+}
+
+.recorded-video-form {
+  background-color: white;
+  padding: 5px;
+  background-color: transparent;
+  margin-right: 530px;
+}
+
+
+
+
+.react-player-container {
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin-bottom: 20px;  /* Margin to space out from controls */
+}
+
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 20px;  /* Margin to space out from results */
+}
+
+
+.classify-btn {
+  display: block; /* Makes the button a block element */
+  width: 200px; /* Set a fixed width for consistency */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #379683; /* Bootstrap primary button color for example */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* Pushes the button to the left edge of its flex space */
+  /* Optionally, move further left by reducing the right margin */
+}
+
+
+
+.video-classification {
+  position: absolute;
+  top: 600px;  /* Adjust as needed */
+  right: 320px;  /* Adjust as needed */
+  font-size: 18px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 3px;
+  border-radius: 2px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.live-classification {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 75vw;
+  background-color: #7395ae5e;
+}
+
+.live-video-bg {
+  width: 900px;
+  height: 450px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.live-video {
+  width: 900px;
+  height: 450px;
+  margin: 0;
+}
+
+.live-classification-btn {
+  padding: 8px 10px;
+  border: none;
+  font-size: 1rem;
+  background-color: #37968327;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.live-classification-btn:hover {
+  border: 1px solid black;
+}
+
+.video-result {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .react-player-container {
+    height: auto;
+    max-width: 100%;  
+  }
+}
+
+.video-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.video-result {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.result-label {
+  font-size: 16px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.video-action, .video-confidence {
+  font-size: 16px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  margin-left: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  flex-grow: 1;
+  font-size: 16px;
+  color: #333;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100; /* Ensure it sits on top of other content */
+}
+.loading-text {
+  color: rgba(0, 0, 0, 10);
+  font-size: 20px;
+  margin-bottom: 20px; /* Space between text and spinner */
+}
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
